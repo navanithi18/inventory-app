@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Inventory Report</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Warehouse</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in report_data %}
+        <tr {% if row.low_stock %} class="table-danger" {% endif %}>
+            <td>{{ row.product }}</td>
+            <td>{{ row.warehouse }}</td>
+            <td>{{ row.qty }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

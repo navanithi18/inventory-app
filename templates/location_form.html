@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Location</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Location ID</label>
+        <input type="text" class="form-control" name="location_id" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location Name</label>
+        <input type="text" class="form-control" name="name" required>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="{{ url_for('locations') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
